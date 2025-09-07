@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: counter
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/test-database
+    username: postgres
+    password: Postgres1234567890
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  cache:
+    type: caffeine
+    cache-names: articleViews, articles
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=10m
