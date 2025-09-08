@@ -1,5 +1,6 @@
 package az.company.counter.model.dto.request;
 
+import az.company.counter.exception.ValidationMessages;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -12,12 +13,12 @@ import static lombok.AccessLevel.PRIVATE;
 @Setter
 @FieldDefaults(level = PRIVATE)
 public class ArticleRequestDTO {
-    @NotBlank(message = "Title cannot be blank")
-    @Size(max = 50, message = "Title cannot exceed 20 characters")
+    @NotBlank(message = ValidationMessages.TITLE_CANNOT_BE_BLANK)
+    @Size(max = 50, message = ValidationMessages.TITLE_CANNOT_EXCEED_50_CHARACTERS)
     String title;
 
-    @NotBlank(message = "Content cannot be blank")
-    @Size(min = 60, message = "Content must be at least 60 characters long")
+    @NotBlank(message = ValidationMessages.CONTENT_CANNOT_BE_BLANK)
+    @Size(min = 60, max = 300, message = ValidationMessages.CONTENT_MUST_BE_BETWEEN_60_AND_300_CHARACTERS)
     String content;
 
 }
