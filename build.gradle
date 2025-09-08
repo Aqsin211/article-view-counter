@@ -6,7 +6,7 @@ plugins {
 
 group = 'az.company'
 version = '1.0.0'
-description = 'counter'
+description = 'article'
 
 java {
     toolchain {
@@ -30,6 +30,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     implementation "org.mapstruct:mapstruct:$mapStructVersion"
     annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructProcessorVersion"
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:$mapStructBindingVersion"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtimeOnly 'org.postgresql:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

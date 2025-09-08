@@ -74,8 +74,8 @@ public class ArticleController {
 
     @PostMapping("/{id}/increment")
     public ResponseEntity<String> increment(@PathVariable Long id) {
-        articleService.incrementViews(id);
-        return ResponseEntity.ok(CrudMessages.VIEW_COUNT_INCREMENTED.getMessage());
+        Long viewCount = articleService.incrementViews(id);
+        return ResponseEntity.ok(format(CrudMessages.VIEW_COUNT_INCREMENTED.getMessage(), viewCount));
     }
 
 }

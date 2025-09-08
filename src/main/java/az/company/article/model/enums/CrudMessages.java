@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum CrudMessages {
     VIEWS("Views: %d"),
-    VIEW_COUNT_INCREMENTED("Article view count incremented"),
+    VIEW_COUNT_INCREMENTED("Article view count incremented. Current views: %d"),
     VIEW_COUNT_RESET("Article view count has been reset"),
     ARTICLE_UPDATED("Article updated"),
     ARTICLE_DELETED("Article deleted"),

@@ -11,7 +11,7 @@ public interface ArticleMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "title", source = "title")
     @Mapping(target = "content", source = "content")
-    @Mapping(target = "viewCount", constant = "0")
+    @Mapping(target = "viewCount", constant = "0L")
     @Mapping(target = "createdAt", ignore = true)
     ArticleEntity toEntity(ArticleRequestDTO dto);
 
@@ -20,5 +20,5 @@ public interface ArticleMapper {
     @Mapping(target = "content", source = "content")
     @Mapping(target = "viewCount", source = "viewCount")
     @Mapping(target = "createdAt", source = "createdAt")
-    ArticleResponseDTO toResponseDTO(ArticleEntity entity);
+    ArticleResponseDTO toDTO(ArticleEntity entity);
 }

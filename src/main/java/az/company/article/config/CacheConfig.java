@@ -15,11 +15,15 @@ public class CacheConfig {
     public Caffeine<Object, Object> caffeineConfig() {
         return Caffeine.newBuilder()
                 .expireAfterWrite(10, TimeUnit.MINUTES)
-                .maximumSize(1000);
+                .maximumSize(1000)
+                .recordStats();
     }
 
     @Bean
     public CacheManager cacheManager(Caffeine<Object, Object> caffeine) {
-        return new CaffeineCacheManager("articleViews", "articles");
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager("articleViews", "articles");
+        cacheManager.setCaffeine(caffeine);
+        return cacheManager;
     }
+
 }
