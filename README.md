@@ -157,12 +157,10 @@ src/
 
 ## **Caching Behavior**
 
-```
 * **Increment View Count:** Increments the value in cache first; persists to DB every `db-persist-threshold` increments.
 * **Reset View Count:** Evicts cache and resets DB value to 0.
 * **Auto Expiration:** Cached view counts expire after 10 minutes of inactivity.
 * **Maximum Cache Size:** 1000 entries to prevent memory overuse.
-```
 
 ---
 
