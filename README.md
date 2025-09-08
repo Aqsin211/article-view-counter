@@ -118,7 +118,7 @@ Example error response:
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/Aqsin211/article-view-counter.git
 cd article-service
 
 # Build the project
